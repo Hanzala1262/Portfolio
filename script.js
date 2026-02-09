@@ -72,4 +72,40 @@ var letter = "";
 
 
 
+window.addEventListener("scroll", function() {
+
+    var sections = document.querySelectorAll(".section");
+
+    sections.forEach(sec => {
+        var pos = sec.getBoundingClientRect().top;
+
+        if (pos < window.innerHeight - 100) {
+            sec.classList.add("show");
+        }
+    });
+
+});
+
+
+
+
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 200) {
+        document.getElementById("topBtn").style.display = "block";
+    } else {
+        document.getElementById("topBtn").style.display = "none";
+    }
+};
+
+function topFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+window.onload = function() {
+    document.getElementById("loader").style.display = "none";
+};
+
+
+
+
+
 
